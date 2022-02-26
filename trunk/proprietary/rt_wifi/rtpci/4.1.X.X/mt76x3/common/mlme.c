@@ -1832,7 +1832,7 @@ NTSTATUS MlmePeriodicExec(IN PRTMP_ADAPTER pAd, IN PCmdQElmt CMDQelmt)
 				if ((tr_entry->ps_state != APPS_RETRIEVE_DONE) &&
 					(tr_entry->ps_state != APPS_RETRIEVE_IDLE) &&
 					RTMP_TIME_AFTER((unsigned long)Now32,
-					(unsigned long)(tr_entry->ps_start_time + 4 * OS_HZ))) {
+					(unsigned long)(tr_entry->ps_start_time + 30 * OS_HZ))) {
 					PsRetrieveTimeout(pAd, tr_entry);
 				}
 			}
