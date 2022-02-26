@@ -29,7 +29,7 @@
 #include "rt_config.h"
 
 #define ADHOC_ENTRY_BEACON_LOST_TIME    (2*OS_HZ)       /* 2 sec */ /* we re-add the ad-hoc peer into our mac table */
-#define ADHOC_BEACON_LOST_TIME          (8*OS_HZ)       /* 8 sec */ /* we deauth the ad-hoc peer */
+#define ADHOC_BEACON_LOST_TIME          (30*OS_HZ)       /* 8 sec */ /* we deauth the ad-hoc peer */
 
 BOOLEAN adhoc_add_peer_from_beacon(RTMP_ADAPTER *pAd, struct wifi_dev *wdev, BCN_IE_LIST *bcn_ie_list,
 								   NDIS_802_11_VARIABLE_IEs *pVIE, USHORT LenVIE)
