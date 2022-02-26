@@ -1298,7 +1298,7 @@ VOID MlmeResetRalinkCounters(RTMP_ADAPTER *pAd)
 
 	==========================================================================
  */
-#define ADHOC_BEACON_LOST_TIME		(8*OS_HZ)  /* 8 sec*/
+#define ADHOC_BEACON_LOST_TIME		(30*OS_HZ)  /* 8 sec*/
 #ifdef MLME_BY_CMDTHREAD
 #else
 VOID MlmePeriodicExecTimer(
@@ -1904,7 +1904,7 @@ VOID MlmeCalculateChannelQuality(
 
 #ifdef CONFIG_MULTI_CHANNEL
 	if (pAd->Mlme.bStartMcc)
-		BeaconLostTime += (8 * OS_HZ); // increase 8 seconds
+		BeaconLostTime += (30 * OS_HZ); // increase 8 seconds
 	else
 		BeaconLostTime = pStaCfg->BeaconLostTime;
 #endif /* CONFIG_MULTI_CHANNEL */

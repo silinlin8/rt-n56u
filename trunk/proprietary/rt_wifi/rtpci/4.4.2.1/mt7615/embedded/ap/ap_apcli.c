@@ -1881,7 +1881,7 @@ VOID ApCliIfMonitor(RTMP_ADAPTER *pAd)
 			// Generic Change done by Kun-ze in WHC codebase for improving Beacon loss detection logic, so keeping in easy enabled case
 #ifdef CONFIG_MULTI_CHANNEL
 			//increase to 12
-			if (RTMP_TIME_AFTER(pAd->Mlme.Now32 , (pApCliEntry->ApCliRcvBeaconTime + (12 * OS_HZ)))) {
+			if (RTMP_TIME_AFTER(pAd->Mlme.Now32 , (pApCliEntry->ApCliRcvBeaconTime + (30 * OS_HZ)))) {
 #ifdef WH_EZ_SETUP
 				if(IS_EZ_SETUP_ENABLED(&pApCliEntry->wdev)) {
 #ifdef EZ_MOD_SUPPORT 
@@ -1930,7 +1930,7 @@ VOID ApCliIfMonitor(RTMP_ADAPTER *pAd)
 					}
 					else
 					{
-						if(RTMP_TIME_AFTER(pAd->Mlme.Now32, pApCliEntry->ApCliRcvBeaconTime + (4 * OS_HZ)))
+						if(RTMP_TIME_AFTER(pAd->Mlme.Now32, pApCliEntry->ApCliRcvBeaconTime + (30 * OS_HZ)))
 						{
 							HW_GET_TX_STATISTIC(pAd, GET_TX_STAT_ENTRY_TX_CNT, pMacEntry->wcid);
 							if ((pMacEntry->TxStatRspCnt >= 1))
