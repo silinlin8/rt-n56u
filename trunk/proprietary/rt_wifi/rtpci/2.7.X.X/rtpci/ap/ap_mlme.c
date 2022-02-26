@@ -196,11 +196,13 @@ VOID APMlmePeriodicExec(
 	if (pAd->Mlme.OneSecPeriodicRound % 2 == 0)
 		ApCliIfMonitor(pAd);
 
-	if (pAd->Mlme.OneSecPeriodicRound % 2 == 1)
+	if (pAd->Mlme.OneSecPeriodicRound % 2 == 1
 #ifdef APCLI_AUTO_CONNECT_SUPPORT
-		if (pAd->ApCfg.ApCliAutoConnectChannelSwitching == FALSE)
+		&& (pAd->ApCfg.ApCliAutoConnectChannelSwitching == FALSE)
 #endif /* APCLI_AUTO_CONNECT_SUPPORT */
+	) {
 		ApCliIfUp(pAd);
+	}
 
 	{
 		INT loop;
