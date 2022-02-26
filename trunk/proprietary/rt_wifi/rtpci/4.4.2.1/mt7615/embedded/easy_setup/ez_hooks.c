@@ -2066,7 +2066,7 @@ void ez_delete_regrp_old_ap(regrp_ap_info_struct *p_ap_info_list)
 	NdisGetSystemUpTime(&now);
 	for(i=0; i< EZ_MAX_DEVICE_SUPPORT; i++)
 	{
-		if(p_ap_info_list[i].valid && RTMP_TIME_AFTER(now,p_ap_info_list[i].last_rx_time + 5*OS_HZ))
+		if(p_ap_info_list[i].valid && RTMP_TIME_AFTER(now,p_ap_info_list[i].last_rx_time + 10*OS_HZ))
 		{
 			printk("%s: %02x:%02x:%02x:%02x:%02x:%02x\n",__func__, PRINT_MAC(p_ap_info_list[i].bssid));
 	//		hex_dump("RegrpAPDel: Ageout",p_ap_info_list[i].bssid,MAC_ADDR_LEN);
