@@ -856,7 +856,7 @@ static BOOLEAN RadarSignalDetermination(
 			WidthRadarSamples[WidthRadarSamplesIdx % RadarElectNum] = CurRecodTime;
 
 			if ((PreRecodTime != 0)
-				&& ((CurRecodTime - PreRecodTime) < (6 * OS_HZ))
+				&& ((CurRecodTime - PreRecodTime) < (10 * OS_HZ))
 				)
 				result = TRUE;
 			else
