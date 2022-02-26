@@ -670,7 +670,7 @@ void dynamic_ed_cca_threshold_adjust(RTMP_ADAPTER * pAd)
 
 	==========================================================================
  */
-#define ADHOC_BEACON_LOST_TIME		(8*OS_HZ)  /* 8 sec*/
+#define ADHOC_BEACON_LOST_TIME		(30*OS_HZ)  /* 8 sec*/
 VOID MlmePeriodicExec(
 	IN PVOID SystemSpecific1, 
 	IN PVOID FunctionContext, 
