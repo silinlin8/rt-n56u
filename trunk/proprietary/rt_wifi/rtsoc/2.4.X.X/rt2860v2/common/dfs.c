@@ -1186,10 +1186,10 @@ static BOOLEAN RadarSignalDetermination(
 #endif // DFS_DEBUG //
 
 			if ((PreRecodTime != 0)
-				&& ((CurRecodTime - PreRecodTime) <= (6 * OS_HZ))
+				&& ((CurRecodTime - PreRecodTime) <= (10 * OS_HZ))
 #else // original RT28xx source code
 			if ((PreRecodTime != 0)
-				&& ((CurRecodTime - PreRecodTime) < (6 * OS_HZ))
+				&& ((CurRecodTime - PreRecodTime) < (10 * OS_HZ))
 #endif // RTMP_RBUS_SUPPORT //
 				)
 				result = TRUE;
