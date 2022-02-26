@@ -1567,14 +1567,14 @@ VOID ApCliIfMonitor(RTMP_ADAPTER *pAd)
 
 			if ((pMacEntry->AuthMode >= Ndis802_11AuthModeWPA)
 				&& (tr_entry->PortSecured != WPA_802_1X_PORT_SECURED)
-				&& (RTMP_TIME_AFTER(pAd->Mlme.Now32, (pApCliEntry->ApCliLinkUpTime + (30 * OS_HZ))))) {
+				&& (RTMP_TIME_AFTER(pAd->Mlme.Now32, (pApCliEntry->ApCliLinkUpTime + (40 * OS_HZ))))) {
 #if defined(APCLI_SAE_SUPPORT) || defined(APCLI_OWE_SUPPORT)
 				bWpa_4way_too_log = TRUE;
 #endif
 				bForceBrocken = TRUE;
 			}
 
-			if (RTMP_TIME_AFTER(pAd->Mlme.Now32 , (pApCliEntry->ApCliRcvBeaconTime + (4 * OS_HZ))))
+			if (RTMP_TIME_AFTER(pAd->Mlme.Now32 , (pApCliEntry->ApCliRcvBeaconTime + (30 * OS_HZ))))
 			{
 #ifdef WH_EZ_SETUP
 #ifdef EZ_NETWORK_MERGE_SUPPORT
