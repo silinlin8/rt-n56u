@@ -62,12 +62,12 @@
 #define JAP_W56	4
 #define MAX_RD_REGION 5
 #if defined(CONFIG_MULTI_CHANNEL) || defined(DOT11Z_TDLS_SUPPORT)
-#define BEACON_LOST_TIME           12 * OS_HZ    /* 2048 msec = 2 sec */
+#define BEACON_LOST_TIME           30 * OS_HZ    /* 2048 msec = 2 sec */
 #else
 #if defined(MT7603_FPGA) || defined(MT7628_FPGA) || defined(MT7636_FPGA)
 #define BEACON_LOST_TIME            40 * OS_HZ    /* 2048 msec = 2 sec */
 #else
-#define BEACON_LOST_TIME            4 * OS_HZ    /* 2048 msec = 2 sec */
+#define BEACON_LOST_TIME            30 * OS_HZ    /* 2048 msec = 2 sec */
 #endif /* MT7603_FPGA */
 #endif /* defined(CONFIG_MULTI_CHANNEL) || defined(DOT11Z_TDLS_SUPPORT) */
 
