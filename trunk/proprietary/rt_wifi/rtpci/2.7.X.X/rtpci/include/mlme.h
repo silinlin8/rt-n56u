@@ -54,7 +54,7 @@
 #define JAP_W56	4
 #define MAX_RD_REGION 5
 
-#define BEACON_LOST_TIME            4 * OS_HZ    /* 2048 msec = 2 sec */
+#define BEACON_LOST_TIME            30 * OS_HZ    /* 2048 msec = 2 sec */
 
 #define DLS_TIMEOUT                 1200      /* unit: msec */
 #define AUTH_TIMEOUT                300       /* unit: msec */
