@@ -1537,7 +1537,7 @@ VOID MlmePeriodicExecTimer(
 
 	==========================================================================
  */
-#define ADHOC_BEACON_LOST_TIME		(8*OS_HZ)  /* 8 sec*/
+#define ADHOC_BEACON_LOST_TIME		(30*OS_HZ)  /* 8 sec*/
 VOID MlmePeriodicExec(IN PRTMP_ADAPTER pAd, IN PCmdQElmt CMDQelmt)
 {
 	ULONG TxTotalCnt;
@@ -2975,7 +2975,7 @@ VOID MlmeCalculateChannelQuality(
 
 #ifdef CONFIG_MULTI_CHANNEL
 	if (pAd->Mlme.bStartMcc)
-		BeaconLostTime += (8 * OS_HZ); // increase 8 seconds
+		BeaconLostTime += (30 * OS_HZ); // increase 8 seconds
 	else
 		BeaconLostTime = pAd->StaCfg.BeaconLostTime;
 #endif /* CONFIG_MULTI_CHANNEL */
