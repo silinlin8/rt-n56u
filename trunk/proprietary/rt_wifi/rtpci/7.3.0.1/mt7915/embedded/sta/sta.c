@@ -2778,7 +2778,7 @@ VOID ApCliIfMonitor(RTMP_ADAPTER *pAd)
 
 			if ((IS_AKM_WPA_CAPABILITY(pMacEntry->SecConfig.AKMMap))
 				&& (tr_entry->PortSecured != WPA_802_1X_PORT_SECURED)
-				&& (RTMP_TIME_AFTER(pAd->Mlme.Now32, (pApCliEntry->ApcliInfStat.ApCliLinkUpTime + (40 * OS_HZ))))) {
+				&& (RTMP_TIME_AFTER(pAd->Mlme.Now32, (pApCliEntry->ApcliInfStat.ApCliLinkUpTime + (60 * OS_HZ))))) {
 				bWpa_4way_too_log = TRUE;
 				bForceBrocken = TRUE;
 			}
