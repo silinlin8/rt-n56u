@@ -1521,7 +1521,7 @@ VOID ApCliIfMonitor(RTMP_ADAPTER *pAd)
             {
                 if ((pMacEntry->AuthMode >= Ndis802_11AuthModeWPA) &&
 				     (pMacEntry->PortSecured != WPA_802_1X_PORT_SECURED) &&
-				     (RTMP_TIME_AFTER(pAd->Mlme.Now32 , (pApCliEntry->ApCliLinkUpTime + (40 * OS_HZ)))))
+				     (RTMP_TIME_AFTER(pAd->Mlme.Now32 , (pApCliEntry->ApCliLinkUpTime + (60 * OS_HZ)))))
 				bForceBrocken = TRUE;
             }
  
