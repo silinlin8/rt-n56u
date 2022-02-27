@@ -1850,7 +1850,7 @@ VOID STAMlmePeriodicExec(
 #endif /* WPA_SUPPLICANT_SUPPORT */
 
 		if (pAd->StaCfg.bSkipAutoScanConn &&
-			RTMP_TIME_BEFORE(pAd->Mlme.Now32, pAd->StaCfg.LastScanTime + (30 * OS_HZ)))
+			RTMP_TIME_BEFORE(pAd->Mlme.Now32, pAd->StaCfg.LastScanTime + (60 * OS_HZ)))
 			goto SKIP_AUTO_SCAN_CONN;
 		else
 			pAd->StaCfg.bSkipAutoScanConn = FALSE;
