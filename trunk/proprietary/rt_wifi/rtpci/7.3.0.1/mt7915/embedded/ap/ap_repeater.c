@@ -1513,9 +1513,9 @@ VOID RepeaterLinkMonitor(RTMP_ADAPTER *pAd)
 				if ((tr_entry->PortSecured != WPA_802_1X_PORT_SECURED) && (
 #if defined(DOT11_SAE_SUPPORT) || defined(CONFIG_OWE_SUPPORT)
 					((IS_AKM_SAE_SHA256(pApCliEntry->MlmeAux.AKMMap) || IS_AKM_OWE(pApCliEntry->MlmeAux.AKMMap)) &&
-					RTMP_TIME_AFTER(pAd->Mlme.Now32, (pReptCliEntry->CliTriggerTime + (30 * OS_HZ)))) ||
+					RTMP_TIME_AFTER(pAd->Mlme.Now32, (pReptCliEntry->CliTriggerTime + (60 * OS_HZ)))) ||
 #endif
-					(RTMP_TIME_AFTER(pAd->Mlme.Now32, (pReptCliEntry->CliTriggerTime + (10 * OS_HZ)))))) {
+					(RTMP_TIME_AFTER(pAd->Mlme.Now32, (pReptCliEntry->CliTriggerTime + (30 * OS_HZ)))))) {
 
 					if (!IS_REPT_LINK_UP(pReptCliEntry)) {
 						MTWF_LOG(DBG_CAT_CLIENT, CATCLIENT_APCLI, DBG_LVL_ERROR,
