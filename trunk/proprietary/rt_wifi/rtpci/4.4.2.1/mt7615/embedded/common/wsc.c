@@ -11015,7 +11015,7 @@ VOID	WscMaintainPeerList(
 
 	while (pPeerEntry != NULL)
 	{
-		if (RTMP_TIME_AFTER(now_time, pPeerEntry->receive_time + (30 * OS_HZ)))
+		if (RTMP_TIME_AFTER(now_time, pPeerEntry->receive_time + (60 * OS_HZ)))
 		{
 			pTempListEntry = pListEntry->pNext;
 			delEntryList(pWscEnList, pListEntry);
