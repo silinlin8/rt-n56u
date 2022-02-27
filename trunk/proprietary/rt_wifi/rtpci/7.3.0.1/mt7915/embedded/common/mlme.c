@@ -2681,7 +2681,7 @@ VOID STAMlmePeriodicExec(RTMP_ADAPTER *pAd, struct wifi_dev *wdev)
 #endif /* WPA_SUPPLICANT_SUPPORT */
 
 		if (pStaCfg->bSkipAutoScanConn &&
-			RTMP_TIME_BEFORE(pAd->Mlme.Now32, pStaCfg->LastScanTime + (30 * OS_HZ)))
+			RTMP_TIME_BEFORE(pAd->Mlme.Now32, pStaCfg->LastScanTime + (60 * OS_HZ)))
 			goto SKIP_AUTO_SCAN_CONN;
 		else
 			pStaCfg->bSkipAutoScanConn = FALSE;
