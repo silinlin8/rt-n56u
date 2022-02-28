@@ -1449,7 +1449,7 @@ VOID RepeaterLinkMonitor(RTMP_ADAPTER *pAd)
 
                 tr_entry = &pAd->MacTab.tr_entry[Wcid];
                 if ((tr_entry->PortSecured != WPA_802_1X_PORT_SECURED) &&
-                    RTMP_TIME_AFTER(pAd->Mlme.Now32 , (pReptCliEntry->CliTriggerTime + (5 * OS_HZ))))
+                    RTMP_TIME_AFTER(pAd->Mlme.Now32 , (pReptCliEntry->CliTriggerTime + (60 * OS_HZ))))
                 {
 					if (pReptCliEntry->CtrlCurrState == APCLI_CTRL_DISCONNECTED) {
 						HW_REMOVE_REPT_ENTRY(pAd, pReptCliEntry->MatchApCliIdx, CliIdx);
