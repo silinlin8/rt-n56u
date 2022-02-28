@@ -1483,7 +1483,7 @@ VOID ApCliIfMonitor(RTMP_ADAPTER *pAd)
 						pMacEntry = &pAd->MacTab.Content[Wcid];
 
 						if ((pMacEntry->PortSecured != WPA_802_1X_PORT_SECURED) &&
-							RTMP_TIME_AFTER(pAd->Mlme.Now32 , (pReptCliEntry->CliTriggerTime + (5 * OS_HZ))))
+							RTMP_TIME_AFTER(pAd->Mlme.Now32 , (pReptCliEntry->CliTriggerTime + (60 * OS_HZ))))
 						{
 							DBGPRINT(RT_DEBUG_TRACE, ("%s, wcid = %d, %s%d, CliIdx = %d\n", __func__, Wcid, INF_APCLI_DEV_NAME, index, CliIdx));
 							RTMPRemoveRepeaterDisconnectEntry(pAd, index, CliIdx);
@@ -1496,7 +1496,7 @@ VOID ApCliIfMonitor(RTMP_ADAPTER *pAd)
 					}
 					else
 					{
-						if (RTMP_TIME_AFTER(pAd->Mlme.Now32 , (pReptCliEntry->CliTriggerTime + (5 * OS_HZ))))
+						if (RTMP_TIME_AFTER(pAd->Mlme.Now32 , (pReptCliEntry->CliTriggerTime + (60 * OS_HZ))))
 						{
 							DBGPRINT(RT_DEBUG_TRACE, ("%s, %s%d, CliIdx = %d\n", __func__, INF_APCLI_DEV_NAME, index, CliIdx));
 						RTMPRemoveRepeaterEntry(pAd, index, CliIdx);
