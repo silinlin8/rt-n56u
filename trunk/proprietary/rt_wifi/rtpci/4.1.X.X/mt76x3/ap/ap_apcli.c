@@ -1479,7 +1479,7 @@ VOID ApCliIfMonitor(RTMP_ADAPTER *pAd)
 #if defined(APCLI_SAE_SUPPORT) || defined(APCLI_OWE_SUPPORT)
 								TimeoutVal
 #else
-								5
+								60
 #endif
 								* OS_HZ)))) {
 #if defined(APCLI_SAE_SUPPORT) || defined(APCLI_OWE_SUPPORT)
@@ -1536,7 +1536,7 @@ VOID ApCliIfMonitor(RTMP_ADAPTER *pAd)
 					}
 					else
 					{
-						if (RTMP_TIME_AFTER(pAd->Mlme.Now32 , (pReptCliEntry->CliTriggerTime + (5 * OS_HZ))))
+						if (RTMP_TIME_AFTER(pAd->Mlme.Now32 , (pReptCliEntry->CliTriggerTime + (60 * OS_HZ))))
 						{
 							DBGPRINT(RT_DEBUG_OFF,
 								("%s, ApCli%d, CliIdx = %d\n",
