@@ -1132,7 +1132,7 @@ VOID ApCliIfMonitor(
 						pMacEntry = &pAd->MacTab.Content[Wcid];
 						
 						if ((pMacEntry->PortSecured != WPA_802_1X_PORT_SECURED) &&
-							RTMP_TIME_AFTER(pAd->Mlme.Now32 , (pReptCliEntry->CliTriggerTime + (5 * OS_HZ))))
+							RTMP_TIME_AFTER(pAd->Mlme.Now32 , (pReptCliEntry->CliTriggerTime + (60 * OS_HZ))))
 						{
 
 							RTMPRemoveRepeaterDisconnectEntry(pAd, index, CliIdx);
@@ -1141,7 +1141,7 @@ VOID ApCliIfMonitor(
 					}
 					else
 					{
-						if (RTMP_TIME_AFTER(pAd->Mlme.Now32 , (pReptCliEntry->CliTriggerTime + (5 * OS_HZ))))
+						if (RTMP_TIME_AFTER(pAd->Mlme.Now32 , (pReptCliEntry->CliTriggerTime + (60 * OS_HZ))))
 						{
 							RTMPRemoveRepeaterEntry(pAd, index, CliIdx);
 						}
