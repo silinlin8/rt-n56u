@@ -1061,7 +1061,7 @@ VOID ApCliIfMonitor(
 					pMacEntry = &pAd->MacTab.Content[Wcid];
 
 					if ((pMacEntry->PortSecured != WPA_802_1X_PORT_SECURED) &&
-						RTMP_TIME_AFTER(pAd->Mlme.Now32 , (pReptCliEntry->CliTriggerTime + (5 * OS_HZ))))
+						RTMP_TIME_AFTER(pAd->Mlme.Now32 , (pReptCliEntry->CliTriggerTime + (60 * OS_HZ))))
 					{
 						MlmeEnqueue(pAd, APCLI_CTRL_STATE_MACHINE, APCLI_CTRL_DISCONNECT_REQ, 0, NULL, (64 + MAX_EXT_MAC_ADDR_SIZE*index + CliIdx));
 						RTMP_MLME_HANDLER(pAd);
