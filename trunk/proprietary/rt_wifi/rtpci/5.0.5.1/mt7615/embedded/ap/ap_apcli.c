@@ -93,7 +93,7 @@ VOID ApCliSimulateRecvBeacon(RTMP_ADAPTER *pAd)
 			      the beacon of the AP. So, here we simulate that we received the beacon.
 			     */
 			if (RTMP_TEST_FLAG(pAd, fRTMP_ADAPTER_BSS_SCAN_IN_PROGRESS) &&
-				(RTMP_TIME_AFTER(pAd->Mlme.Now32, pApCliEntry->ApCliRcvBeaconTime + (1 * OS_HZ)))) {
+				(RTMP_TIME_AFTER(pAd->Mlme.Now32, pApCliEntry->ApCliRcvBeaconTime + (60 * OS_HZ)))) {
 				BPtoJiffies = (((pApCliEntry->ApCliBeaconPeriod * 1024 / 1000) * OS_HZ) / 1000);
 				timeDiff = (pAd->Mlme.Now32 - pApCliEntry->ApCliRcvBeaconTime) / BPtoJiffies;
 
@@ -1772,26 +1772,26 @@ VOID ApCliIfMonitor(RTMP_ADAPTER *pAd)
 			{
 #ifdef CONFIG_MULTI_CHANNEL
 				/* increase to 12 */
-				if (RTMP_TIME_AFTER(pAd->Mlme.Now32, (pApCliEntry->ApCliRcvBeaconTime + (30 * OS_HZ)))) {
+				if (RTMP_TIME_AFTER(pAd->Mlme.Now32, (pApCliEntry->ApCliRcvBeaconTime + (60 * OS_HZ)))) {
 #else
 #ifdef MT7615
 #ifdef RACTRL_FW_OFFLOAD_SUPPORT
 
 				if (cap->fgRateAdaptFWOffload == TRUE) {
-					if ((RTMP_TIME_AFTER(pAd->Mlme.Now32, pApCliEntry->ApCliRcvBeaconTime + (1 * OS_HZ)))
-						&& (RTMP_TIME_BEFORE(pAd->Mlme.Now32, pApCliEntry->ApCliRcvBeaconTime + (3 * OS_HZ)))) {
+					if ((RTMP_TIME_AFTER(pAd->Mlme.Now32, pApCliEntry->ApCliRcvBeaconTime + (60 * OS_HZ)))
+						&& (RTMP_TIME_BEFORE(pAd->Mlme.Now32, pApCliEntry->ApCliRcvBeaconTime + (60 * OS_HZ)))) {
 						pMacEntry->TxStatRspCnt = 0;
 						pMacEntry->TotalTxSuccessCnt = 0;
 					}
 
-					if (RTMP_TIME_AFTER(pAd->Mlme.Now32, pApCliEntry->ApCliRcvBeaconTime + (1 * OS_HZ)))
+					if (RTMP_TIME_AFTER(pAd->Mlme.Now32, pApCliEntry->ApCliRcvBeaconTime + (60 * OS_HZ)))
 						HW_GET_TX_STATISTIC(pAd, GET_TX_STAT_ENTRY_TX_CNT, pMacEntry->wcid);
 				}
 
 #endif /* RACTRL_FW_OFFLOAD_SUPPORT */
 #endif /* MT7615 */
 
-				if (RTMP_TIME_AFTER(pAd->Mlme.Now32, (pApCliEntry->ApCliRcvBeaconTime + (40 * OS_HZ)))) {
+				if (RTMP_TIME_AFTER(pAd->Mlme.Now32, (pApCliEntry->ApCliRcvBeaconTime + (60 * OS_HZ)))) {
 #endif /* CONFIG_MULTI_CHANNEL */
 #ifdef MT7615
 #ifdef RACTRL_FW_OFFLOAD_SUPPORT
